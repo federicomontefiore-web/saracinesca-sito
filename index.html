@@ -301,6 +301,14 @@ a:hover{color:var(--brick-dark)}
 .cfg-bar span{color:var(--ochre)}
 .cfg-bar[hidden]{display:none}
 @media (min-width:960px){.cfg-bar{display:none}}
+
+/* Percorso */
+.tl{list-style:none;margin:24px 0;padding:0;border-left:2px solid var(--ochre)}
+.tl li{position:relative;padding:0 0 18px 22px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--brick)}
+.tl li:last-child{padding-bottom:0}
+.tl b{display:block;font:600 13px/1.4 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--brick)}
+.tl span{display:block;margin-top:2px}
 </style>
 </head>
 <body>
@@ -608,17 +616,15 @@ a:hover{color:var(--brick-dark)}
     <div class="ph"><div><b>Da inserire</b>Una tua foto, meglio se al lavoro</div></div>
     <div>
       <p class="eyebrow">Chi c'è dietro</p>
-      <h2 id="h-chi">Sono Federico. Cucina, magazzino, spiaggia: il caos lo conosco da dentro.</h2>
-      <p class="lead" style="margin-top:20px">Ho fatto il sous-chef a Bristol, ho fatto girare magazzini Amazon per tre anni, ho rimesso in riga aziende e-commerce per altri quattro. E nel 2026 ho diretto l'Amare Holi Beach, a Passoscuro.</p>
-      <p>So cos'è un sabato sera con le comande che non finiscono mai, il cameriere che non si presenta a Ferragosto, il fornitore che porta la merce sbagliata alle sette di mattina. Non ti vendo app: metto ordine, e la tecnologia la uso solo dove ti fa risparmiare tempo o soldi. Vengo di persona, parlo semplice, e quando serve rispondo al telefono.</p>
-      <ul class="facts">
-        <li>Cucina e ristorazione</li>
-        <li>Direzione di uno stabilimento balneare</li>
-        <li>Operations e logistica</li>
-        <li>E-commerce e Amazon</li>
-        <li>Reti e cablaggio</li>
-        <li>App e gestionali su misura</li>
-      </ul>
+      <h2 id="h-chi">Prima di sistemare il tuo locale, ho sudato in uno come il tuo.</h2>
+      <p class="lead" style="margin-top:20px">Sono Federico. In più di dieci anni ho cambiato quattro postazioni, sempre dalla parte di chi lavora.</p>
+      <ol class="tl">
+        <li><b>In cucina</b><span>Sous-chef a Bristol. Comande appese, linea piena, il servizio che non aspetta nessuno.</span></li>
+        <li><b>In magazzino</b><span>Tre anni in Amazon: magazzini con più fornitori, lanci di nuovi siti logistici, formazione di chi ci lavorava.</span></li>
+        <li><b>In azienda</b><span>Quattro anni da consulente e-commerce e supply chain: scorte, corrieri, Amazon Seller e Vendor, numeri da far tornare.</span></li>
+        <li><b>In spiaggia</b><span>Direttore dell'Amare Holi Beach a Passoscuro nel 2026: staff, fornitori, serate e Ferragosto tutto esaurito.</span></li>
+      </ol>
+      <p>Morale: non ti vendo app. Metto ordine, e la tecnologia la uso solo dove ti fa risparmiare tempo o soldi. Vengo di persona, parlo semplice, e quando serve rispondo al telefono.</p>
     </div>
   </div>
 </section>
