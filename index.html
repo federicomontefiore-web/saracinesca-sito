@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saracinesca — Digitalizzazione per bar, negozi e attività di Roma</title>
-<meta name="description" content="Sito, Google, prenotazioni, fidelity, rete Wi-Fi e consulenza su logistica e magazzino per attività di Roma. Un solo referente, che viene di persona. Audit gratuito di 10 minuti.">
+<meta name="description" content="Sito, Google, prenotazioni, fidelity, rete, organizzazione del lavoro e logistica per bar, ristoranti, stabilimenti, negozi e attività di Roma. Prezzi chiari per settore. Un solo referente, che viene di persona. Audit gratuito di 10 minuti.">
 <meta property="og:title" content="Saracinesca — La tua attività, aperta anche online">
 <meta property="og:description" content="Digitalizzazione per bar, negozi e attività di Roma. Audit gratuito nel tuo locale.">
 <meta property="og:type" content="website">
@@ -255,6 +255,52 @@ a:hover{color:var(--brick-dark)}
 .logi-sectors{display:grid;gap:12px}
 @media (min-width:600px){.logi-sectors{grid-template-columns:1fr 1fr}}
 @media (min-width:1000px){.logi-sectors{grid-template-columns:repeat(4,1fr)}}
+
+/* Configuratore */
+.pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.pick-btn{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;font:600 15px/1.25 var(--f-body);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.pick-btn:hover{border-color:var(--brick)}
+.pick-btn[aria-pressed="true"]{border:2px solid var(--brick);padding:13px;background:#FBEFE9}
+.pick-btn .ic{width:36px;height:36px;border-radius:var(--r);background:var(--paper-2);display:grid;place-items:center;color:var(--brick)}
+.pick-btn svg{width:20px;height:20px}
+.cfg-empty{margin-top:28px;padding:18px;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--ink-2);text-align:center}
+.cfg{display:grid;gap:28px;margin-top:36px}
+@media (min-width:960px){.cfg{grid-template-columns:1fr 340px;align-items:start}}
+.cfg-group+.cfg-group{margin-top:28px}
+.cfg-group h3{font-size:20px;margin-bottom:12px}
+.svc{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.svc+.svc{margin-top:8px}
+.svc:hover{border-color:var(--ink-2)}
+.svc:has(input:checked){border-color:var(--brick);box-shadow:inset 0 0 0 1px var(--brick)}
+.svc input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--brick)}
+.svc b{display:block;font-weight:600}
+.svc span{display:block;font-size:14px;color:var(--ink-2);margin-top:2px}
+.svc-p{text-align:right;font-size:14px;white-space:nowrap}
+.svc-p strong{display:block;font:700 17px/1.2 var(--f-display);color:var(--ink)}
+.svc-p em{font-style:normal;color:var(--ink-2)}
+@media (max-width:520px){.svc{grid-template-columns:22px 1fr}.svc-p{grid-column:2;text-align:left}.svc-p strong{display:inline;margin-right:6px}}
+.cfg-sum{background:var(--steel);color:#F2EEE6;border-radius:var(--r);padding:22px}
+@media (min-width:960px){.cfg-sum{position:sticky;top:88px}}
+.cfg-sum .eyebrow{color:var(--ochre)}
+.cfg-sum h3{color:#fff;font-size:22px}
+.cfg-sum ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px}
+.cfg-sum li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:6px}
+.cfg-sum li i{font-style:normal;opacity:.8;white-space:nowrap}
+.sum-none{opacity:.75;font-size:14px;margin-top:12px}
+.sum-tot{margin-top:16px;display:grid;gap:4px}
+.sum-tot div{display:flex;justify-content:space-between;align-items:baseline}
+.sum-tot b{font:700 24px/1.1 var(--f-display);color:#fff}
+.cfg-sum .btn{width:100%;margin-top:18px}
+.cfg-sum .btn-ghost{margin-top:8px;border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.cfg-sum .btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+.cfg-sum .btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.sum-note{margin-top:14px;font-size:13px;opacity:.8}
+.cfg-sum .btn{font-size:15px}
+.cfg-bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:var(--r);padding:14px 16px;font-weight:600;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.cfg-bar:hover{color:#fff}
+.cfg-bar span{color:var(--ochre)}
+.cfg-bar[hidden]{display:none}
+@media (min-width:960px){.cfg-bar{display:none}}
 </style>
 </head>
 <body>
@@ -267,11 +313,10 @@ a:hover{color:var(--brick-dark)}
       Saracinesca
     </a>
     <nav class="nav" aria-label="Principale">
-      <a href="#servizi">Servizi</a>
-      <a href="#settori">Settori</a>
-      <a href="#pacchetti">Pacchetti</a>
+      <a href="#settori">Servizi e prezzi</a>
       <a href="#logistica">Logistica</a>
       <a href="#lavori">Lavori</a>
+      <a href="#chi">Chi sono</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
     </nav>
@@ -280,11 +325,10 @@ a:hover{color:var(--brick-dark)}
     </button>
   </div>
   <nav class="mobile-nav" id="mnav" aria-label="Menu mobile">
-    <a href="#servizi">Servizi</a>
-    <a href="#settori">Settori</a>
-    <a href="#pacchetti">Pacchetti</a>
+    <a href="#settori">Servizi e prezzi</a>
     <a href="#logistica">Logistica</a>
     <a href="#lavori">Lavori</a>
+    <a href="#chi">Chi sono</a>
     <a href="#faq">FAQ</a>
     <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
   </nav>
@@ -298,10 +342,10 @@ a:hover{color:var(--brick-dark)}
     <div>
       <p class="eyebrow">Digitalizzazione per attività di Roma</p>
       <h1>La tua attività, <em>aperta</em> anche online.</h1>
-      <p class="lead">Sito, Google, prenotazioni, fidelity e rete Wi-Fi per bar, negozi e attività di Roma. Un solo referente, che viene di persona.</p>
+      <p class="lead">Sito, Google, prenotazioni, fidelity, rete e organizzazione del lavoro per bar, ristoranti, stabilimenti, negozi e attività di Roma. Un solo referente, che viene di persona.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
-        <a class="btn btn-secondary" href="#pacchetti">Vedi i pacchetti</a>
+        <a class="btn btn-secondary" href="#settori">Scegli il tuo settore</a>
       </div>
       <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10 minuti nel tuo locale, senza impegno.</p>
     </div>
@@ -366,57 +410,34 @@ a:hover{color:var(--brick-dark)}
   </div>
 </section>
 
-<!-- SETTORI -->
+<!-- SERVIZI E PREZZI -->
 <section class="sec" id="settori" aria-labelledby="h-settori">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Settori</p>
-      <h2 id="h-settori">Con chi lavoro.</h2>
-      <p class="lead">Alcuni esempi di dove posso darti una mano. Se la tua attività non c'è, chiedimi lo stesso: spesso i problemi sono gli stessi.</p>
+      <p class="eyebrow">Servizi e prezzi</p>
+      <h2 id="h-settori">Scegli il tuo settore, poi i servizi.</h2>
+      <p class="lead">Ogni attività ha bisogno di cose diverse. Scegli il tuo settore, spunta quello che ti interessa e mandami la lista: ti rispondo con un preventivo a prezzo fisso.</p>
     </div>
-    <div class="sectors">
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></span>
-        <h3>Bar e caffetterie</h3>
-        <p>Scheda Google, menù con QR, fidelity e buoni prepagati, Wi-Fi separato dalla cassa.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></svg></span>
-        <h3>Ristoranti e pizzerie</h3>
-        <p>Sai chi chiama e cosa ordina di solito, prenotazioni online con promemoria, menù sempre aggiornato.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
-        <h3>Negozi e boutique</h3>
-        <p>Vetrina online, listino, gift card e una rete stabile per casse, POS e stampanti.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span>
-        <h3>Parrucchieri ed estetica</h3>
-        <p>Agenda online, promemoria su WhatsApp e clienti fidelizzati con pacchetti e carte prepagate.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></span>
-        <h3>Palestre e associazioni</h3>
-        <p>Iscrizioni, abbonamenti e badge d'ingresso, senza fogli e quaderni.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17v-5l2-5h14l2 5v5H3z"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg></span>
-        <h3>NCC e trasporto persone</h3>
-        <p>Pagina per farsi prenotare, registro corse digitale e gestione della flotta.</p>
-      </div>
-      <div class="sector">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg></span>
-        <h3>E-commerce e venditori Amazon</h3>
-        <p>Account Seller e Vendor, catalogo, scorte e spedizioni sotto controllo.</p>
-      </div>
-      <div class="sector hl">
-        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/></svg></span>
-        <h3>Magazzini e distribuzione</h3>
-        <p>Layout, scorte, processi di ricevimento e spedizione, indicatori chiari.</p>
-        <a href="#logistica">Vedi la consulenza logistica</a>
-      </div>
+    <div class="pick" id="pick" aria-label="Settori"></div>
+    <p class="cfg-empty" id="cfg-empty">Scegli un settore qui sopra per vedere i servizi e i prezzi di partenza.</p>
+    <noscript><p class="cfg-empty">Per vedere servizi e prezzi attiva JavaScript, oppure scrivimi: ti mando il listino.</p></noscript>
+    <div class="cfg" id="cfg" hidden>
+      <div id="cfg-list"></div>
+      <aside class="cfg-sum" id="cfg-sum" aria-live="polite">
+        <p class="eyebrow">La tua selezione</p>
+        <h3 id="sum-sector"></h3>
+        <ul id="sum-list"></ul>
+        <p class="sum-none" id="sum-none">Nessun servizio selezionato.</p>
+        <div class="sum-tot">
+          <div><span>Avvio da</span><b id="tot-a">0 €</b></div>
+          <div><span>Canone da</span><b id="tot-m">0 €/mese</b></div>
+        </div>
+        <a class="btn btn-primary" id="sum-wa" href="#" target="_blank" rel="noopener" aria-disabled="true">Mandami la richiesta su WhatsApp</a>
+        <a class="btn btn-ghost" id="sum-mail" href="#" aria-disabled="true">Oppure via email</a>
+        <p class="sum-note">Prezzi di partenza indicativi, IVA esclusa. Hardware, cavi e costi di terzi a parte. Il preventivo definitivo, a prezzo fisso, arriva dopo l'audit gratuito.</p>
+      </aside>
     </div>
+    <a class="cfg-bar" id="cfg-bar" href="#cfg-sum" hidden><b id="bar-t"></b><span>Vedi e invia</span></a>
 
     <div class="spot">
       <div class="spot-txt">
@@ -469,7 +490,7 @@ a:hover{color:var(--brick-dark)}
       <li class="step">
         <span class="step-n">02</span>
         <h3>Proposta a prezzo fisso</h3>
-        <p>Scegli il pacchetto che ti serve. Prezzo scritto prima di iniziare, nessuna sorpresa a fine lavoro.</p>
+        <p>Ti preparo un preventivo con i servizi che ti servono davvero. Prezzo scritto prima di iniziare, nessuna sorpresa a fine lavoro.</p>
       </li>
       <li class="step">
         <span class="step-n">03</span>
@@ -480,71 +501,8 @@ a:hover{color:var(--brick-dark)}
   </div>
 </section>
 
-<!-- PACCHETTI -->
-<section class="sec" id="pacchetti" aria-labelledby="h-pacchetti">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Pacchetti</p>
-      <h2 id="h-pacchetti">Scegli da dove partire.</h2>
-      <p class="lead">Un costo di avvio e un canone mensile piccolo, che copre hosting, aggiornamenti e assistenza.</p>
-    </div>
-    <div class="plans">
-      <article class="plan" aria-labelledby="p1">
-        <h3 class="plan-name" id="p1">Base</h3>
-        <p class="plan-tag">Ti trovano.</p>
-        <div class="plan-price">
-          <div class="from">A partire da</div>
-          <div class="big">390 € <small>avvio</small></div>
-          <div class="monthly">+ 29 € al mese</div>
-        </div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Scheda Google sistemata e completa</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pagina web di una pagina</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Menù o listino con QR code</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kit recensioni: QR al banco e risposte pronte</li>
-        </ul>
-        <a class="btn btn-secondary" href="#contatti">Parliamone</a>
-      </article>
-      <article class="plan featured" aria-labelledby="p2">
-        <span class="plan-badge">Consigliato per bar e negozi</span>
-        <h3 class="plan-name" id="p2">Pro</h3>
-        <p class="plan-tag">Ti trovano, e tornano.</p>
-        <div class="plan-price">
-          <div class="from">A partire da</div>
-          <div class="big">900 € <small>avvio</small></div>
-          <div class="monthly">+ 59 € al mese</div>
-        </div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tutto il pacchetto Base</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Prenotazioni online oppure fidelity e buoni prepagati</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Messaggi WhatsApp automatici</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Report mensile semplice</li>
-        </ul>
-        <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
-      </article>
-      <article class="plan" aria-labelledby="p3">
-        <h3 class="plan-name" id="p3">Completo</h3>
-        <p class="plan-tag">Gestisci tutto.</p>
-        <div class="plan-price">
-          <div class="from">A partire da</div>
-          <div class="big">2.000 € <small>avvio</small></div>
-          <div class="monthly">+ 99 € al mese</div>
-        </div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tutto il pacchetto Pro</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rete e Wi-Fi progettati per il tuo locale</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gestionale su misura</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Formazione del personale e assistenza prioritaria</li>
-        </ul>
-        <a class="btn btn-secondary" href="#contatti">Parliamone</a>
-      </article>
-    </div>
-    <p class="plans-note"><strong>Cablaggio e hardware sono sempre a preventivo</strong>, perché dipendono dal locale. Preferisci non pagare l'avvio? Si può: canone più alto con impegno di 12 mesi. Il dominio e i dati restano sempre tuoi.</p>
-  </div>
-</section>
-
 <!-- LOGISTICA -->
-<section class="sec alt" id="logistica" aria-labelledby="h-logistica">
+<section class="sec" id="logistica" aria-labelledby="h-logistica">
   <div class="wrap logi">
     <div class="logi-side">
       <p class="eyebrow">Logistica e magazzino</p>
@@ -603,7 +561,7 @@ a:hover{color:var(--brick-dark)}
 </section>
 
 <!-- LAVORI -->
-<section class="sec" id="lavori" aria-labelledby="h-lavori">
+<section class="sec alt" id="lavori" aria-labelledby="h-lavori">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Lavori fatti</p>
@@ -645,15 +603,17 @@ a:hover{color:var(--brick-dark)}
 </section>
 
 <!-- CHI SONO -->
-<section class="sec alt" aria-labelledby="h-chi">
+<section class="sec" id="chi" aria-labelledby="h-chi">
   <div class="wrap about">
     <div class="ph"><div><b>Da inserire</b>Una tua foto, meglio se al lavoro</div></div>
     <div>
       <p class="eyebrow">Chi c'è dietro</p>
-      <h2 id="h-chi">Sono Federico. Vengo dalle operations, non dal marketing.</h2>
-      <p class="lead" style="margin-top:20px">Ho lavorato più di tre anni in Amazon tra magazzini, lanci di nuovi siti e formazione, poi quattro anni come consulente e-commerce e supply chain.</p>
-      <p>Il mio mestiere è far funzionare le cose ogni giorno, non fare presentazioni. Oggi lo faccio per le attività di Roma: vengo di persona, parlo semplice e resto il tuo riferimento anche dopo.</p>
+      <h2 id="h-chi">Sono Federico. Ho lavorato in cucina, in magazzino e in spiaggia.</h2>
+      <p class="lead" style="margin-top:20px">Ho fatto il sous-chef a Bristol, in Inghilterra. Poi più di tre anni in Amazon tra magazzini, lanci di nuovi siti e formazione, e quattro anni da consulente e-commerce e supply chain. Nell'estate 2026 ho diretto l'Amare Holi Beach, a Passoscuro.</p>
+      <p>So com'è un sabato sera con la sala piena, un turno scoperto ad agosto o un ordine arrivato sbagliato. Per questo parto da come lavori, e uso la tecnologia solo dove ti fa risparmiare tempo o soldi. Vengo di persona, parlo semplice e resto il tuo riferimento anche dopo.</p>
       <ul class="facts">
+        <li>Cucina e ristorazione</li>
+        <li>Direzione di uno stabilimento balneare</li>
         <li>Operations e logistica</li>
         <li>E-commerce e Amazon</li>
         <li>Reti e cablaggio</li>
@@ -664,7 +624,7 @@ a:hover{color:var(--brick-dark)}
 </section>
 
 <!-- FAQ -->
-<section class="sec" id="faq" aria-labelledby="h-faq">
+<section class="sec alt" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Domande frequenti</p>
@@ -673,7 +633,7 @@ a:hover{color:var(--brick-dark)}
     <div class="faq">
       <details>
         <summary>Devo firmare un contratto per anni?</summary>
-        <p>No. Il canone è mensile e puoi disdire con un preavviso semplice. L'impegno di 12 mesi c'è solo se scegli di non pagare il costo di avvio.</p>
+        <p>No. Il canone è mensile e puoi disdire con un preavviso semplice. Paghi una volta l'avvio e, solo per i servizi che ne hanno bisogno, un canone mensile.</p>
       </details>
       <details>
         <summary>Il sito e i dati restano miei?</summary>
@@ -688,12 +648,16 @@ a:hover{color:var(--brick-dark)}
         <p>Sì, a Roma lavoro sul posto: audit, installazione e formazione li faccio nel tuo locale. Le piccole modifiche le faccio a distanza, così sono più veloce.</p>
       </details>
       <details>
-        <summary>Il cablaggio è incluso nei pacchetti?</summary>
-        <p>La progettazione della rete sì, nel pacchetto Completo. Cavi, apparati e lavori di cablaggio li quoto a parte dopo il sopralluogo, perché cambiano molto da locale a locale.</p>
+        <summary>Quanto costa il cablaggio?</summary>
+        <p>La progettazione della rete ha un prezzo di partenza. Cavi, apparati e lavori di cablaggio li quoto a parte dopo il sopralluogo, perché cambiano molto da locale a locale.</p>
+      </details>
+      <details>
+        <summary>I prezzi del sito sono definitivi?</summary>
+        <p>Sono prezzi di partenza indicativi, IVA esclusa. Dopo l'audit gratuito ricevi un preventivo scritto a prezzo fisso, con i servizi che ti servono davvero.</p>
       </details>
       <details>
         <summary>Posso chiederti solo la consulenza sul magazzino?</summary>
-        <p>Sì. Logistica e magazzino sono un servizio a sé: non devi prendere anche sito o pacchetti. Si parte da un incontro per capire come lavori oggi.</p>
+        <p>Sì. Logistica e magazzino sono un servizio a sé: non devi prendere anche sito o altri servizi. Si parte da un incontro per capire come lavori oggi.</p>
       </details>
       <details>
         <summary>Non sono pratico di tecnologia. È un problema?</summary>
@@ -747,6 +711,136 @@ a:hover{color:var(--brick-dark)}
   });
   m.addEventListener('click',function(e){ if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Apri il menu');} });
   document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+<script>
+(function(){
+  var WA='390000000000', MAIL='info@example.com';
+  var A=['Farsi trovare','Clienti e incassi','Gestione interna','Ristorazione e ospitalità','Logistica e magazzino','Rete e tecnologia'];
+  var S={
+    google:[0,'Scheda Google sistemata','Orari, foto, categorie e risposte alle recensioni.',150],
+    sito:[0,'Sito o landing page','Una pagina veloce, pensata per il telefono, con il tuo dominio.',390,19],
+    menu:[0,'Menù o listino digitale con QR','Sempre aggiornato, senza ristampare nulla.',120],
+    recensioni:[0,'Kit recensioni','QR al banco e risposte pronte per chiedere e gestire le recensioni.',90],
+    prenota:[1,'Prenotazioni online','Tavoli o appuntamenti, con promemoria su WhatsApp.',350,29],
+    ombrelloni:[1,'Prenotazione ombrelloni e lettini','Mappa della spiaggia, prenotazioni e abbonamenti online.',590,39],
+    liste:[1,'Liste e tavoli per le serate','Prenotazione tavoli, liste nominative e ingressi.',350,29],
+    fidelity:[1,'Fidelity, buoni prepagati e gift card','Con badge NFC da appoggiare in cassa. Lettori e badge a parte.',490,29],
+    chiama:[1,'Sai chi chiama','Nome, indirizzo, ordine solito e orari del cliente quando squilla il telefono.',450,29],
+    whatsapp:[1,'Messaggi WhatsApp automatici','Conferme, promemoria e avvisi ai clienti. Costi WhatsApp a parte.',190,19],
+    gestionale:[2,'Gestionale su misura','Magazzino, ordini, turni o scadenze: solo quello che ti serve.',900,29],
+    flotta:[2,'Gestione flotta e corse','Corse, autisti e mezzi, con notifiche WhatsApp al personale.',900,39],
+    carta:[2,'Da carta a dati','Registri e quaderni trasformati in dati da consultare e analizzare.',250],
+    cruscotto:[2,'Cruscotto dei numeri','Incassi, costi e indicatori chiari in Excel o Power BI.',350],
+    turni:[2,'Turni e organizzazione dello staff','Turni chiari, ruoli definiti e meno buchi in calendario.',250],
+    cucina:[3,'Organizzazione di cucina e linea','Postazioni, preparazioni e flusso degli ordini nei momenti di punta.',400],
+    foodcost:[3,'Schede ricetta e food cost','Quanto ti costa davvero ogni piatto, e dove guadagni.',350],
+    fornitori:[3,'Fornitori e dispensa','Ordini ai fornitori, scorte minime e scadenze sotto controllo.',300],
+    stagione:[3,'Apertura e gestione della stagione','Dal piano di apertura allo staff: la stagione organizzata prima che inizi.',600],
+    eventi:[3,'Eventi e serate','Format, organizzazione, musica e comunicazione delle serate.',400],
+    layout:[4,'Analisi del magazzino e layout','Ubicazioni, classificazione ABC, percorsi di prelievo più corti.',450],
+    scorte:[4,'Scorte e riordini','Scorta minima, punti di riordino e inventari a rotazione.',400],
+    processi:[4,'Procedure di entrata e uscita','Ricevimento, stoccaggio, picking, imballo e spedizione.',500],
+    corrieri:[4,'Corrieri e spedizioni','Confronto e trattativa con i corrieri.',250],
+    amazon:[4,'Amazon Seller e Vendor','Account, catalogo, scorte e scelta tra spedire da te o con Amazon.',300],
+    formazione:[4,'Formazione del personale','Affiancamento sul posto e istruzioni semplici. Prezzo a giornata.',250],
+    rete:[5,'Progetto della rete e Wi-Fi','Wi-Fi clienti separato da cassa, POS e stampanti.',290],
+    cablaggio:[5,'Cablaggio e installazione','Cavi, armadio rack, apparati. Schema documentato.',null],
+    assistenza:[5,'Assistenza tecnica','Un solo referente per sito, rete e app, con interventi prioritari.',0,39]
+  };
+  var I={
+    cup:'<path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/>',
+    fork:'<path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/>',
+    beach:'<path d="M22 12a10 10 0 0 0-20 0z"/><path d="M12 12v8a2 2 0 0 0 4 0M12 2v1"/>',
+    music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+    bag:'<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/>',
+    cut:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
+    car:'<path d="M3 17v-5l2-5h14l2 5v5H3z"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/>',
+    cart:'<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/>',
+    box:'<path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/>'
+  };
+  var T=[
+    ['bar','Bar e caffetterie','cup','google sito menu recensioni fidelity whatsapp fornitori turni cruscotto rete assistenza'],
+    ['ristoranti','Ristoranti e pizzerie','fork','google sito menu recensioni prenota chiama whatsapp fidelity cucina foodcost fornitori turni cruscotto rete'],
+    ['balneari','Stabilimenti e locali estivi','beach','sito google ombrelloni fidelity menu stagione turni eventi cucina foodcost fornitori cruscotto rete'],
+    ['serali','Locali serali ed eventi','music','sito google liste eventi whatsapp fidelity turni cruscotto rete'],
+    ['negozi','Negozi e piccole catene','bag','google sito recensioni fidelity whatsapp chiama scorte layout cruscotto rete assistenza'],
+    ['persona','Parrucchieri ed estetica','cut','google sito prenota whatsapp fidelity recensioni chiama scorte cruscotto'],
+    ['ncc','NCC e trasporto persone','car','sito google recensioni flotta carta whatsapp chiama cruscotto'],
+    ['ecommerce','E-commerce e Amazon','cart','amazon scorte processi corrieri layout gestionale cruscotto formazione'],
+    ['magazzini','Magazzini e distribuzione','box','layout scorte processi corrieri gestionale cruscotto formazione rete cablaggio']
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var eur=function(n){return n.toLocaleString('it-IT')+' €'};
+  var cur=null, sel={};
+  var pick=$('pick');
+  T.forEach(function(t){
+    var b=document.createElement('button');
+    b.type='button';b.className='pick-btn';b.setAttribute('aria-pressed','false');b.dataset.s=t[0];
+    b.innerHTML='<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">'+I[t[2]]+'</svg></span>'+t[1];
+    b.addEventListener('click',function(){show(t[0],true)});
+    pick.appendChild(b);
+  });
+  function price(s){
+    if(s[3]===null)return '<strong>Su preventivo</strong><em>dopo il sopralluogo</em>';
+    var h=s[3]?'<strong>da '+eur(s[3])+'</strong>':'';
+    if(s[4])h+=(s[3]?'<em>+ '+eur(s[4])+'/mese</em>':'<strong>da '+eur(s[4])+'/mese</strong>');
+    return h;
+  }
+  function show(id,scroll){
+    var t=T.filter(function(x){return x[0]===id})[0]; if(!t)return;
+    if(cur!==id)sel={};
+    cur=id;
+    [].forEach.call(pick.children,function(b){b.setAttribute('aria-pressed',b.dataset.s===id?'true':'false')});
+    var ids=t[3].split(' '), html='';
+    A.forEach(function(a,ai){
+      var g=ids.filter(function(k){return S[k][0]===ai});
+      if(!g.length)return;
+      html+='<div class="cfg-group"><h3>'+a+'</h3>';
+      g.forEach(function(k){
+        var s=S[k];
+        html+='<label class="svc"><input type="checkbox" value="'+k+'"'+(sel[k]?' checked':'')+'><div><b>'+s[1]+'</b><span>'+s[2]+'</span></div><div class="svc-p">'+price(s)+'</div></label>';
+      });
+      html+='</div>';
+    });
+    $('cfg-list').innerHTML=html;
+    $('cfg').hidden=false;$('cfg-empty').hidden=true;
+    $('sum-sector').textContent=t[1];
+    try{history.replaceState(null,'','#settore='+id)}catch(e){}
+    sum();
+    if(scroll){var top=$('cfg').getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:top,behavior:'smooth'})}
+  }
+  $('cfg-list').addEventListener('change',function(e){
+    if(e.target.type!=='checkbox')return;
+    if(e.target.checked)sel[e.target.value]=1;else delete sel[e.target.value];
+    sum();
+  });
+  function sum(){
+    var ks=Object.keys(S).filter(function(k){return sel[k]}), a=0, m=0, li='', txt=[], pre=false;
+    ks.forEach(function(k){
+      var s=S[k];
+      if(s[3]===null)pre=true;else a+=s[3];
+      if(s[4])m+=s[4];
+      li+='<li><span>'+s[1]+'</span><i>'+(s[3]===null?'preventivo':(s[3]?eur(s[3]):eur(s[4])+'/m'))+'</i></li>';
+      txt.push('- '+s[1]);
+    });
+    $('sum-list').innerHTML=li;
+    $('sum-none').hidden=ks.length>0;
+    $('tot-a').textContent=eur(a)+(pre?' +':'');
+    $('tot-m').textContent=eur(m)+'/mese';
+    var t=T.filter(function(x){return x[0]===cur})[0];
+    var msg='Ciao Federico, ho un\'attività nel settore "'+t[1]+'".\nMi interessano:\n'+txt.join('\n')+'\n\nPossiamo fissare l\'audit gratuito?';
+    var on=ks.length>0;
+    ['sum-wa','sum-mail'].forEach(function(id){$(id).setAttribute('aria-disabled',on?'false':'true')});
+    barOn=on;$('bar-t').textContent=ks.length+(ks.length===1?' servizio':' servizi')+' · da '+eur(a)+(pre?' +':'');bar();
+    $('sum-wa').href=on?'https://wa.me/'+WA+'?text='+encodeURIComponent(msg):'#';
+    $('sum-mail').href=on?'mailto:'+MAIL+'?subject='+encodeURIComponent('Richiesta servizi - '+t[1])+'&body='+encodeURIComponent(msg):'#';
+  }
+  var barOn=false,sumVis=false;
+  function bar(){$('cfg-bar').hidden=!(barOn&&!sumVis)}
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){sumVis=e[0].isIntersecting;bar()}).observe($('cfg-sum'));
+  var h=location.hash.match(/settore=([a-z]+)/);
+  if(h)show(h[1],false);
 })();
 </script>
 </body>
