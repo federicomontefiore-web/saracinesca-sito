@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saracinesca — Digitalizzazione per bar, negozi e attività di Roma</title>
+<meta name="description" content="Sito, Google, prenotazioni, fidelity e rete Wi-Fi per bar, negozi e attività di Roma. Un solo referente, che viene di persona. Audit gratuito di 10 minuti.">
+<meta property="og:title" content="Saracinesca — La tua attività, aperta anche online">
+<meta property="og:description" content="Digitalizzazione per bar, negozi e attività di Roma. Audit gratuito nel tuo locale.">
+<meta property="og:type" content="website">
+<!-- DA INSERIRE: og:image (immagine 1200x630) e og:url quando c'è il dominio -->
+<meta name="theme-color" content="#F6F1E7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23A63D1A'/%3E%3Crect x='6' y='6' width='20' height='20' rx='2' fill='none' stroke='%23F6F1E7' stroke-width='2.4'/%3E%3Cpath d='M9 11h14M9 15h14M9 19h14' stroke='%23F6F1E7' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F1E7; --paper-2:#EDE5D6; --surface:#FFFDF8;
+  --ink:#1F1B16; --ink-2:#5A5148; --line:#D8CDBA;
+  --brick:#A63D1A; --brick-dark:#84300F; --ochre:#D9A441;
+  --steel:#3B4148; --ok:#2F6B4F; --err:#B3261E;
+  --r-sm:4px; --r:10px;
+  --shadow:0 1px 0 var(--line),0 12px 32px -16px rgba(31,27,22,.25);
+  --max:1160px; --gut:20px; --sec:64px;
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (min-width:768px){:root{--gut:32px;--sec:96px}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-body);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;margin:0;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(40px,7vw,64px);line-height:1.02}
+h2{font-size:clamp(30px,4.2vw,48px);line-height:1.08}
+h3{font-size:22px;line-height:1.3;font-weight:600}
+p{margin:0}
+a{color:var(--brick);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--brick-dark)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:var(--r-sm)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:var(--sec) 0}
+.alt{background:var(--paper-2)}
+.eyebrow{font:600 13px/1.4 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--brick);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--ochre)}
+.lead{font-size:18px;color:var(--ink-2);max-width:60ch}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:var(--r);z-index:100}
+.skip:focus{left:8px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:var(--r);font:600 16px/1 var(--f-body);text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--brick);color:#fff}
+.btn-primary:hover{background:var(--brick-dark);color:#fff}
+.btn-secondary{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-secondary:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.94);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 22px/1 var(--f-display)}
+.logo-mark{width:30px;height:30px;border-radius:7px;background:var(--brick);display:grid;place-items:center}
+.nav{display:none;gap:28px;align-items:center}
+.nav a{color:var(--ink);text-decoration:none;font-weight:500}
+.nav a:not(.btn):hover{color:var(--brick)}
+.nav a.btn-primary{color:#fff}
+.nav .btn{min-height:42px;padding:0 16px;font-size:15px}
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1.5px solid var(--ink);border-radius:var(--r);background:none;cursor:pointer;color:var(--ink)}
+.mobile-nav{display:none;border-top:1px solid var(--line);padding:8px var(--gut) 20px}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:14px 0;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+.mobile-nav a.btn{display:flex;align-items:center;padding-top:0;padding-bottom:0;margin-top:16px;width:100%;border:0;color:#fff;justify-content:center;padding:0 22px}
+@media (min-width:900px){.nav{display:flex}.menu-btn,.mobile-nav,.mobile-nav.open{display:none}}
+
+/* Hero */
+.hero{padding:48px 0 64px}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media (min-width:900px){.hero{padding:80px 0 96px}.hero-grid{grid-template-columns:1.1fr .9fr;gap:64px}}
+.hero h1 em{font-style:normal;position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--ochre);z-index:-1;opacity:.85}
+.hero .lead{margin-top:22px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{margin-top:18px;font-size:14px;color:var(--ink-2);display:flex;gap:8px;align-items:center}
+.hero-note svg{width:18px;height:18px;color:var(--ok)}
+
+/* Shop visual */
+.shop{position:relative;max-width:440px;margin:0 auto;width:100%}
+.shop-frame{position:relative;background:var(--steel);border-radius:14px 14px 4px 4px;padding:18px 18px 0}
+.shop-sign{background:var(--ink);color:var(--paper);font:700 15px/1 var(--f-display);text-align:center;padding:12px;border-radius:6px;letter-spacing:.06em;margin-bottom:14px}
+.shop-opening{position:relative;height:360px;overflow:hidden;background:var(--paper-2);border-radius:4px 4px 0 0}
+.shutter{position:absolute;inset:0 0 auto 0;height:42%;z-index:2;
+  background:repeating-linear-gradient(180deg,#59616A 0 12px,#4A5159 12px 14px,#6B737C 14px 16px);
+  box-shadow:0 6px 10px -4px rgba(0,0,0,.35);animation:raise 1.1s cubic-bezier(.3,.7,.2,1) .2s both}
+.shutter::after{content:"";position:absolute;left:50%;bottom:6px;width:56px;height:8px;margin-left:-28px;border-radius:3px;background:#2B3036}
+@keyframes raise{from{height:100%}to{height:42%}}
+.gcard{position:absolute;left:16px;right:16px;bottom:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.gcard-tag{position:absolute;top:-11px;right:12px;background:var(--ochre);color:var(--ink);font:600 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:var(--r-sm)}
+.gcard-name{font:600 20px/1.2 var(--f-display)}
+.gcard-meta{font-size:14px;color:var(--ink-2);margin-top:4px}
+.gcard-meta b{color:var(--ok);font-weight:600}
+.gcard-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.gcard-actions span{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--brick);font-weight:500}
+.gcard-actions i{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center}
+.gcard-actions svg{width:18px;height:18px}
+.shop-floor{height:14px;background:var(--ink);border-radius:0 0 6px 6px}
+
+/* Problems */
+.sec-head{display:grid;gap:16px;margin-bottom:48px;max-width:720px}
+.problems{display:grid;gap:0;border-top:1px solid var(--line)}
+@media (min-width:768px){.problems{grid-template-columns:1fr 1fr;column-gap:56px}}
+.problem{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--line)}
+.problem .ic{width:44px;height:44px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;color:var(--brick)}
+.problem .ic svg{width:22px;height:22px}
+.problem q{display:block;font:600 19px/1.3 var(--f-display);quotes:"“" "”"}
+.problem p{margin-top:6px;color:var(--ink-2)}
+
+/* Steps */
+.steps{display:grid;gap:32px;counter-reset:s}
+@media (min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
+.step{position:relative;padding-top:24px;border-top:3px solid var(--ink)}
+.step:first-child{border-top-color:var(--brick)}
+.step-n{font:700 15px/1 var(--f-body);color:var(--brick);letter-spacing:.06em}
+.step h3{margin:10px 0 8px}
+.step p{color:var(--ink-2)}
+
+/* Pricing */
+.plans{display:grid;gap:20px;align-items:stretch}
+@media (min-width:900px){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column}
+.plan.featured{border:2px solid var(--brick);box-shadow:var(--shadow);position:relative}
+.plan-badge{position:absolute;top:-13px;left:24px;background:var(--brick);color:#fff;font:600 12px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;border-radius:var(--r-sm)}
+.plan-name{font:700 26px/1.1 var(--f-display)}
+.plan-tag{color:var(--ink-2);margin-top:6px;font-size:15px}
+.plan-price{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line)}
+.plan-price .from{font-size:13px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.plan-price .big{font:700 36px/1.1 var(--f-display);margin-top:4px}
+.plan-price .big small{font:500 15px/1 var(--f-body);color:var(--ink-2)}
+.plan-price .monthly{margin-top:4px;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:10px;flex:1}
+.plan li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15px}
+.plan li svg{width:20px;height:20px;color:var(--ok);margin-top:2px}
+.plan .btn{width:100%}
+.plans-note{margin-top:28px;color:var(--ink-2);font-size:15px;max-width:75ch}
+.plans-note strong{color:var(--ink)}
+
+/* Work */
+.works{display:grid;gap:40px}
+.work{display:grid;gap:24px;align-items:center}
+@media (min-width:900px){.work{grid-template-columns:5fr 6fr;gap:56px}.work:nth-child(even) .ph{order:2}}
+.ph{aspect-ratio:4/3;border:2px dashed var(--ochre);border-radius:var(--r);background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(217,164,65,.08) 14px 28px);display:grid;place-items:center;text-align:center;padding:20px;color:var(--ink-2);font-size:14px}
+.ph b{display:block;color:var(--ink);font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+@media (max-width:899px){.work .ph{aspect-ratio:16/9}}
+.work-kicker{font:600 13px/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--brick)}
+.work h3{font-size:28px;margin:10px 0 12px;line-height:1.15}
+.work p{color:var(--ink-2)}
+.work ul{margin:16px 0 0;padding-left:20px;color:var(--ink)}
+.work li{margin:6px 0}
+.quote-ph{margin-top:20px;border-left:3px dashed var(--ochre);padding:6px 0 6px 16px;color:var(--ink-2);font-size:15px}
+
+/* About */
+.about{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.about{grid-template-columns:4fr 7fr;gap:64px}}
+.about .ph{aspect-ratio:1/1;max-width:360px}
+.about p+p{margin-top:16px}
+.about .lead{color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;padding:0;list-style:none}
+.facts li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:500}
+
+/* FAQ */
+.faq{max-width:820px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:600 19px/1.35 var(--f-display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 28px/1 var(--f-body);color:var(--brick);flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--ink-2);max-width:68ch}
+
+/* Final CTA */
+.final{background:var(--steel);color:#F2EEE6;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0 0 auto 0;height:28px;background:repeating-linear-gradient(180deg,#59616A 0 6px,#4A5159 6px 7px);opacity:.9}
+.final .wrap{position:relative}
+.final h2{color:#fff;max-width:16ch}
+.final .lead{color:#D9D3C8;margin-top:18px}
+.final-grid{display:grid;gap:40px;align-items:end}
+@media (min-width:900px){.final-grid{grid-template-columns:1.2fr 1fr}}
+.contact{display:grid;gap:12px}
+.contact a{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:500}
+.contact a:hover{background:rgba(255,255,255,.12);color:#fff}
+.contact a.wa{background:var(--brick);border-color:var(--brick)}
+.contact a.wa:hover{background:var(--brick-dark)}
+.contact svg{width:22px;height:22px;flex:none}
+.contact small{display:block;font-weight:400;font-size:13px;opacity:.8}
+.final :focus-visible{outline-color:var(--ochre)}
+
+/* Footer */
+.ftr{background:var(--ink);color:#BDB4A7;font-size:14px;padding:32px 0}
+.ftr .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+.ftr a{color:#E8E1D5}
+.todo{background:rgba(217,164,65,.22);outline:1px dashed var(--ochre);padding:0 4px;border-radius:3px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Saracinesca, torna all'inizio">
+      <span class="logo-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="1.5" stroke="#F6F1E7" stroke-width="1.6"/><path d="M5 5.5h8M5 8h8M5 10.5h8" stroke="#F6F1E7" stroke-width="1.4"/></svg></span>
+      Saracinesca
+    </a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#servizi">Servizi</a>
+      <a href="#pacchetti">Pacchetti</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Apri il menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mnav" aria-label="Menu mobile">
+    <a href="#servizi">Servizi</a>
+    <a href="#pacchetti">Pacchetti</a>
+    <a href="#lavori">Lavori</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Digitalizzazione per attività di Roma</p>
+      <h1>La tua attività, <em>aperta</em> anche online.</h1>
+      <p class="lead">Sito, Google, prenotazioni, fidelity e rete Wi-Fi per bar, negozi e attività di Roma. Un solo referente, che viene di persona.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
+        <a class="btn btn-secondary" href="#pacchetti">Vedi i pacchetti</a>
+      </div>
+      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10 minuti nel tuo locale, senza impegno.</p>
+    </div>
+
+    <div class="shop" role="img" aria-label="Illustrazione: una saracinesca mezza alzata che scopre la scheda Google di un negozio, con i pulsanti Chiama, Indicazioni, Prenota e Menù">
+      <div class="shop-frame">
+        <div class="shop-sign" aria-hidden="true">IL TUO LOCALE</div>
+        <div class="shop-opening" aria-hidden="true">
+          <div class="shutter"></div>
+          <div class="gcard">
+            <span class="gcard-tag">Esempio</span>
+            <div class="gcard-name">Il tuo locale</div>
+            <div class="gcard-meta"><b>Aperto</b> · Bar caffetteria · Roma</div>
+            <div class="gcard-actions">
+              <span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i>Chiama</span>
+              <span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg></i>Indicazioni</span>
+              <span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i>Prenota</span>
+              <span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 7h8M8 11h6"/></svg></i>Menù</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shop-floor" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMI -->
+<section class="sec alt" id="servizi" aria-labelledby="h-servizi">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Ti riconosci?</p>
+      <h2 id="h-servizi">I problemi di tutti i giorni, risolti uno per uno.</h2>
+      <p class="lead">Non ti vendo "la tecnologia". Sistemo le cose che ti fanno perdere clienti e tempo.</p>
+    </div>
+    <div class="problems">
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+        <div><q>Non mi trovano su Google.</q><p>Scheda Google sistemata, orari giusti, foto vere e una pagina web semplice con menù o listino.</p></div>
+      </div>
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
+        <div><q>Il Wi-Fi va e viene, il POS si blocca.</q><p>Rete progettata e cablata a regola: cassa, POS e stampanti separati dal Wi-Fi dei clienti.</p></div>
+      </div>
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3"/></svg></span>
+        <div><q>Passo la giornata al telefono per le prenotazioni.</q><p>Prenotazioni online con promemoria su WhatsApp, così i clienti si presentano.</p></div>
+      </div>
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 15h4"/></svg></span>
+        <div><q>I clienti vengono una volta e poi spariscono.</q><p>Fidelity, buoni prepagati e gift card, anche con badge da appoggiare in cassa.</p></div>
+      </div>
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+        <div><q>Faccio ancora tutto su carta o su mille Excel.</q><p>Un gestionale semplice su misura: magazzino, turni, corse, scadenze. Solo quello che ti serve.</p></div>
+      </div>
+      <div class="problem">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div><q>Quando si rompe qualcosa non so chi chiamare.</q><p>Un solo referente per sito, rete e app. Aggiornamenti, backup e modifiche compresi nel canone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section class="sec" aria-labelledby="h-come">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Come funziona</p>
+      <h2 id="h-come">Tre passi, e non resti da solo.</h2>
+    </div>
+    <ol class="steps" style="list-style:none;padding:0;margin:0">
+      <li class="step">
+        <span class="step-n">01</span>
+        <h3>Audit gratuito nel tuo locale</h3>
+        <p>Vengo da te, 10 minuti nel momento più tranquillo. Guardo come ti vedono su Google, recensioni, rete e cassa. Ti lascio tre cose da sistemare, anche se non mi scegli.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">02</span>
+        <h3>Proposta a prezzo fisso</h3>
+        <p>Scegli il pacchetto che ti serve. Prezzo scritto prima di iniziare, nessuna sorpresa a fine lavoro.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">03</span>
+        <h3>Lo facciamo, e restiamo</h3>
+        <p>Realizzo tutto e ti insegno a usarlo. Con il canone mensile aggiorno orari, menù e contenuti e intervengo se qualcosa non va.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PACCHETTI -->
+<section class="sec alt" id="pacchetti" aria-labelledby="h-pacchetti">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Pacchetti</p>
+      <h2 id="h-pacchetti">Scegli da dove partire.</h2>
+      <p class="lead">Un costo di avvio e un canone mensile piccolo, che copre hosting, aggiornamenti e assistenza.</p>
+    </div>
+    <div class="plans">
+      <article class="plan" aria-labelledby="p1">
+        <h3 class="plan-name" id="p1">Base</h3>
+        <p class="plan-tag">Ti trovano.</p>
+        <div class="plan-price">
+          <div class="from">A partire da</div>
+          <div class="big">390 € <small>avvio</small></div>
+          <div class="monthly">+ 29 € al mese</div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Scheda Google sistemata e completa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pagina web di una pagina</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Menù o listino con QR code</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kit recensioni: QR al banco e risposte pronte</li>
+        </ul>
+        <a class="btn btn-secondary" href="#contatti">Parliamone</a>
+      </article>
+      <article class="plan featured" aria-labelledby="p2">
+        <span class="plan-badge">Consigliato per bar e negozi</span>
+        <h3 class="plan-name" id="p2">Pro</h3>
+        <p class="plan-tag">Ti trovano, e tornano.</p>
+        <div class="plan-price">
+          <div class="from">A partire da</div>
+          <div class="big">900 € <small>avvio</small></div>
+          <div class="monthly">+ 59 € al mese</div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tutto il pacchetto Base</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Prenotazioni online oppure fidelity e buoni prepagati</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Messaggi WhatsApp automatici</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Report mensile semplice</li>
+        </ul>
+        <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
+      </article>
+      <article class="plan" aria-labelledby="p3">
+        <h3 class="plan-name" id="p3">Completo</h3>
+        <p class="plan-tag">Gestisci tutto.</p>
+        <div class="plan-price">
+          <div class="from">A partire da</div>
+          <div class="big">2.000 € <small>avvio</small></div>
+          <div class="monthly">+ 99 € al mese</div>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tutto il pacchetto Pro</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rete e Wi-Fi progettati per il tuo locale</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gestionale su misura</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Formazione del personale e assistenza prioritaria</li>
+        </ul>
+        <a class="btn btn-secondary" href="#contatti">Parliamone</a>
+      </article>
+    </div>
+    <p class="plans-note"><strong>Cablaggio e hardware sono sempre a preventivo</strong>, perché dipendono dal locale. Preferisci non pagare l'avvio? Si può: canone più alto con impegno di 12 mesi. Il dominio e i dati restano sempre tuoi.</p>
+  </div>
+</section>
+
+<!-- LAVORI -->
+<section class="sec" id="lavori" aria-labelledby="h-lavori">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lavori fatti</p>
+      <h2 id="h-lavori">Cose vere, in attività vere.</h2>
+    </div>
+    <div class="works">
+      <article class="work">
+        <div class="ph"><div><b>Da inserire</b>Foto della cassa buoni al bar</div></div>
+        <div>
+          <p class="work-kicker">Bar · Fidelity</p>
+          <h3>Una cassa per i buoni prepagati, con badge NFC</h3>
+          <p>Il cliente appoggia il badge sul lettore, il cassiere vede subito il saldo e scala la consumazione. Costruita su Google Sheets: niente server, niente costi fissi per il bar.</p>
+          <p class="quote-ph"><span class="todo">DA INSERIRE: nome del bar e una frase del titolare</span></p>
+        </div>
+      </article>
+      <article class="work">
+        <div class="ph"><div><b>Da inserire</b>Screenshot della landing page su telefono</div></div>
+        <div>
+          <p class="work-kicker">Cooperativa NCC · Roma</p>
+          <h3>Landing page e registro corse digitale</h3>
+          <p>Una pagina pensata per il telefono, raggiungibile dai social e da QR code: un tocco per chiamare o scrivere su WhatsApp, in evidenza transfer per aeroporti e stazioni e tour.</p>
+          <ul>
+            <li>Registro delle corse, prima scritto a mano, trasformato in dati da analizzare</li>
+          </ul>
+          <p class="quote-ph"><span class="todo">DA INSERIRE: nome della cooperativa e una frase del referente</span></p>
+        </div>
+      </article>
+      <article class="work">
+        <div class="ph"><div><b>Da inserire</b>Foto di un armadio rack o schema di cablaggio</div></div>
+        <div>
+          <p class="work-kicker">Negozi · Rete</p>
+          <h3>Impianti di rete per negozi e attività</h3>
+          <p>Router, switch, PC, casse automatiche, POS e stampanti collegati in modo ordinato. Ogni impianto ha il suo schema di cablaggio documentato, così chiunque sa dove mettere le mani.</p>
+          <p class="quote-ph"><span class="todo">DA INSERIRE: tipo di negozio o cliente (se citabile)</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section class="sec alt" aria-labelledby="h-chi">
+  <div class="wrap about">
+    <div class="ph"><div><b>Da inserire</b>Una tua foto, meglio se al lavoro</div></div>
+    <div>
+      <p class="eyebrow">Chi c'è dietro</p>
+      <h2 id="h-chi">Sono Federico. Vengo dalle operations, non dal marketing.</h2>
+      <p class="lead" style="margin-top:20px">Ho lavorato più di tre anni in Amazon tra magazzini, lanci di nuovi siti e formazione, poi quattro anni come consulente e-commerce e supply chain.</p>
+      <p>Il mio mestiere è far funzionare le cose ogni giorno, non fare presentazioni. Oggi lo faccio per le attività di Roma: vengo di persona, parlo semplice e resto il tuo riferimento anche dopo.</p>
+      <ul class="facts">
+        <li>Operations e logistica</li>
+        <li>E-commerce e Amazon</li>
+        <li>Reti e cablaggio</li>
+        <li>App e gestionali su misura</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Domande frequenti</p>
+      <h2 id="h-faq">Le domande che mi fanno tutti.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Devo firmare un contratto per anni?</summary>
+        <p>No. Il canone è mensile e puoi disdire con un preavviso semplice. L'impegno di 12 mesi c'è solo se scegli di non pagare il costo di avvio.</p>
+      </details>
+      <details>
+        <summary>Il sito e i dati restano miei?</summary>
+        <p>Sì. Il dominio è intestato a te e i dati (clienti, buoni, prenotazioni) sono tuoi. Se un giorno smetti, ti consegno tutto.</p>
+      </details>
+      <details>
+        <summary>Cosa succede se disdico il canone?</summary>
+        <p>Ti passo dominio, file e dati, così puoi continuare con chi vuoi. Smettono solo l'assistenza e gli aggiornamenti da parte mia.</p>
+      </details>
+      <details>
+        <summary>Vieni davvero di persona?</summary>
+        <p>Sì, a Roma lavoro sul posto: audit, installazione e formazione li faccio nel tuo locale. Le piccole modifiche le faccio a distanza, così sono più veloce.</p>
+      </details>
+      <details>
+        <summary>Il cablaggio è incluso nei pacchetti?</summary>
+        <p>La progettazione della rete sì, nel pacchetto Completo. Cavi, apparati e lavori di cablaggio li quoto a parte dopo il sopralluogo, perché cambiano molto da locale a locale.</p>
+      </details>
+      <details>
+        <summary>Non sono pratico di tecnologia. È un problema?</summary>
+        <p>No, è il motivo per cui esisto. Ti spiego tutto con parole semplici e ti lascio solo le cose che userai davvero.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="sec final" id="contatti" aria-labelledby="h-contatti">
+  <div class="wrap final-grid">
+    <div>
+      <h2 id="h-contatti">Alziamo la saracinesca anche online?</h2>
+      <p class="lead">Prenota l'audit gratuito: 10 minuti nel tuo locale, e ti lascio tre cose concrete da migliorare.</p>
+    </div>
+    <div class="contact">
+      <!-- DA INSERIRE: sostituire 390000000000 con il numero WhatsApp reale (formato internazionale senza +) -->
+      <a class="wa" href="https://wa.me/390000000000?text=Ciao%2C%20vorrei%20prenotare%20l%27audit%20gratuito" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        <span>Scrivimi su WhatsApp<small>Il modo più veloce</small></span>
+      </a>
+      <a href="tel:+390000000000">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span>Chiamami<small class="todo" style="color:#fff">DA INSERIRE: numero di telefono</small></span>
+      </a>
+      <a href="mailto:info@example.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        <span>Scrivimi una email<small class="todo" style="color:#fff">DA INSERIRE: indirizzo email</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Saracinesca · Roma · P.IVA <span class="todo">DA INSERIRE</span></span>
+    <span><a href="#">Privacy</a> <span class="todo">DA INSERIRE: pagina privacy</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.menu-btn'), m=document.getElementById('mnav');
+  b.addEventListener('click',function(){
+    var o=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+    b.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu');
+  });
+  m.addEventListener('click',function(e){ if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Apri il menu');} });
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
