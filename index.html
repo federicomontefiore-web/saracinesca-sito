@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saracinesca — Digitalizzazione per bar, negozi e attività di Roma</title>
-<meta name="description" content="Sito, Google, prenotazioni, fidelity e rete Wi-Fi per bar, negozi e attività di Roma. Un solo referente, che viene di persona. Audit gratuito di 10 minuti.">
+<meta name="description" content="Sito, Google, prenotazioni, fidelity, rete Wi-Fi e consulenza su logistica e magazzino per attività di Roma. Un solo referente, che viene di persona. Audit gratuito di 10 minuti.">
 <meta property="og:title" content="Saracinesca — La tua attività, aperta anche online">
 <meta property="og:description" content="Digitalizzazione per bar, negozi e attività di Roma. Audit gratuito nel tuo locale.">
 <meta property="og:type" content="website">
@@ -62,7 +62,7 @@ a:hover{color:var(--brick-dark)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 22px/1 var(--f-display)}
 .logo-mark{width:30px;height:30px;border-radius:7px;background:var(--brick);display:grid;place-items:center}
-.nav{display:none;gap:28px;align-items:center}
+.nav{display:none;gap:24px;align-items:center}
 .nav a{color:var(--ink);text-decoration:none;font-weight:500}
 .nav a:not(.btn):hover{color:var(--brick)}
 .nav a.btn-primary{color:#fff}
@@ -72,7 +72,7 @@ a:hover{color:var(--brick-dark)}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:14px 0;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
 .mobile-nav a.btn{display:flex;align-items:center;padding-top:0;padding-bottom:0;margin-top:16px;width:100%;border:0;color:#fff;justify-content:center;padding:0 22px}
-@media (min-width:900px){.nav{display:flex}.menu-btn,.mobile-nav,.mobile-nav.open{display:none}}
+@media (min-width:1080px){.nav{display:flex}.menu-btn,.mobile-nav,.mobile-nav.open{display:none}}
 
 /* Hero */
 .hero{padding:48px 0 64px}
@@ -199,6 +199,31 @@ a:hover{color:var(--brick-dark)}
 .ftr .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 .ftr a{color:#E8E1D5}
 .todo{background:rgba(217,164,65,.22);outline:1px dashed var(--ochre);padding:0 4px;border-radius:3px}
+
+/* Settori */
+.sectors{display:grid;gap:12px}
+@media (min-width:600px){.sectors{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.sectors{grid-template-columns:repeat(4,1fr)}}
+.sector{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.sector .ic{width:40px;height:40px;border-radius:var(--r);background:var(--paper-2);display:grid;place-items:center;color:var(--brick);margin-bottom:14px}
+.sector .ic svg{width:22px;height:22px}
+.sector h3{font-size:19px}
+.sector p{margin-top:6px;color:var(--ink-2);font-size:15px}
+.sector.hl{border:2px solid var(--brick)}
+.sector.hl a{display:inline-block;margin-top:10px;font-weight:600;font-size:15px}
+
+/* Logistica */
+.logi{display:grid;gap:40px}
+@media (min-width:900px){.logi{grid-template-columns:5fr 7fr;gap:64px;align-items:start}}
+.logi-side p+p{margin-top:16px}
+.logi-list{display:grid;border-top:1px solid var(--line);margin:0;padding:0;list-style:none}
+.logi-list li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.logi-list .n{font:700 15px/1.6 var(--f-body);color:var(--brick);letter-spacing:.06em}
+.logi-list h3{font-size:20px}
+.logi-list p{margin-top:4px;color:var(--ink-2)}
+.kpis{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
+.kpis li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:14px;font-weight:500}
+.logi-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
 </style>
 </head>
 <body>
@@ -212,7 +237,9 @@ a:hover{color:var(--brick-dark)}
     </a>
     <nav class="nav" aria-label="Principale">
       <a href="#servizi">Servizi</a>
+      <a href="#settori">Settori</a>
       <a href="#pacchetti">Pacchetti</a>
+      <a href="#logistica">Logistica</a>
       <a href="#lavori">Lavori</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
@@ -223,7 +250,9 @@ a:hover{color:var(--brick-dark)}
   </div>
   <nav class="mobile-nav" id="mnav" aria-label="Menu mobile">
     <a href="#servizi">Servizi</a>
+    <a href="#settori">Settori</a>
     <a href="#pacchetti">Pacchetti</a>
+    <a href="#logistica">Logistica</a>
     <a href="#lavori">Lavori</a>
     <a href="#faq">FAQ</a>
     <a class="btn btn-primary" href="#contatti">Prenota l'audit gratuito</a>
@@ -306,8 +335,62 @@ a:hover{color:var(--brick-dark)}
   </div>
 </section>
 
+<!-- SETTORI -->
+<section class="sec" id="settori" aria-labelledby="h-settori">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Settori</p>
+      <h2 id="h-settori">Con chi lavoro.</h2>
+      <p class="lead">Alcuni esempi di dove posso darti una mano. Se la tua attività non c'è, chiedimi lo stesso: spesso i problemi sono gli stessi.</p>
+    </div>
+    <div class="sectors">
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></span>
+        <h3>Bar e caffetterie</h3>
+        <p>Scheda Google, menù con QR, fidelity e buoni prepagati, Wi-Fi separato dalla cassa.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></svg></span>
+        <h3>Ristoranti e pizzerie</h3>
+        <p>Prenotazioni online con promemoria, menù sempre aggiornato, gestione delle recensioni.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
+        <h3>Negozi e boutique</h3>
+        <p>Vetrina online, listino, gift card e una rete stabile per casse, POS e stampanti.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span>
+        <h3>Parrucchieri ed estetica</h3>
+        <p>Agenda online, promemoria su WhatsApp e clienti fidelizzati con pacchetti e carte prepagate.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></span>
+        <h3>Palestre e associazioni</h3>
+        <p>Iscrizioni, abbonamenti e badge d'ingresso, senza fogli e quaderni.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17v-5l2-5h14l2 5v5H3z"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg></span>
+        <h3>NCC e trasporto persone</h3>
+        <p>Pagina per farsi prenotare, registro corse digitale e gestione della flotta.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg></span>
+        <h3>E-commerce e venditori Amazon</h3>
+        <p>Account Seller e Vendor, catalogo, scorte e spedizioni sotto controllo.</p>
+      </div>
+      <div class="sector hl">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/></svg></span>
+        <h3>Magazzini e distribuzione</h3>
+        <p>Layout, scorte, processi di ricevimento e spedizione, indicatori chiari.</p>
+        <a href="#logistica">Vedi la consulenza logistica</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- COME FUNZIONA -->
-<section class="sec" aria-labelledby="h-come">
+<section class="sec alt" aria-labelledby="h-come">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Come funziona</p>
@@ -334,7 +417,7 @@ a:hover{color:var(--brick-dark)}
 </section>
 
 <!-- PACCHETTI -->
-<section class="sec alt" id="pacchetti" aria-labelledby="h-pacchetti">
+<section class="sec" id="pacchetti" aria-labelledby="h-pacchetti">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Pacchetti</p>
@@ -393,6 +476,39 @@ a:hover{color:var(--brick-dark)}
       </article>
     </div>
     <p class="plans-note"><strong>Cablaggio e hardware sono sempre a preventivo</strong>, perché dipendono dal locale. Preferisci non pagare l'avvio? Si può: canone più alto con impegno di 12 mesi. Il dominio e i dati restano sempre tuoi.</p>
+  </div>
+</section>
+
+<!-- LOGISTICA -->
+<section class="sec alt" id="logistica" aria-labelledby="h-logistica">
+  <div class="wrap logi">
+    <div class="logi-side">
+      <p class="eyebrow">Logistica e magazzino</p>
+      <h2 id="h-logistica">Il magazzino è dove si perdono soldi in silenzio.</h2>
+      <p class="lead" style="margin-top:20px">Merce che non si trova, scorte che finiscono o restano ferme, ordini spediti in ritardo. Sono problemi di processo, prima che di software.</p>
+      <p>In Amazon ho lanciato nuovi siti logistici, coordinato magazzini con più fornitori e formato il personale. Poi ho seguito per quattro anni aziende e-commerce su scorte, spedizioni e marketplace. Porto lo stesso metodo in realtà più piccole, con strumenti semplici.</p>
+      <ul class="kpis" aria-label="Indicatori che misuriamo insieme">
+        <li>Accuratezza inventario</li>
+        <li>Fill rate</li>
+        <li>Consegne puntuali</li>
+        <li>Throughput</li>
+        <li>Rotazione delle scorte</li>
+      </ul>
+      <div class="logi-cta">
+        <a class="btn btn-primary" href="#contatti">Parliamo del tuo magazzino</a>
+      </div>
+    </div>
+    <ol class="logi-list">
+      <li><span class="n">01</span><div><h3>Analisi e layout</h3><p>Sopralluogo, mappa delle ubicazioni, classificazione ABC degli articoli e percorsi di prelievo più corti.</p></div></li>
+      <li><span class="n">02</span><div><h3>Scorte e riordini</h3><p>Scorta minima, punti di riordino e inventari a rotazione. Meno rotture di stock e meno merce ferma.</p></div></li>
+      <li><span class="n">03</span><div><h3>Processi in entrata e in uscita</h3><p>Ricevimento, stoccaggio, picking, imballo e spedizione scritti come procedure semplici, uguali per tutti.</p></div></li>
+      <li><span class="n">04</span><div><h3>Numeri sotto controllo</h3><p>Un cruscotto in Excel o Power BI con pochi indicatori chiari, costruito sui dati che hai già.</p></div></li>
+      <li><span class="n">05</span><div><h3>Corrieri ed e-commerce</h3><p>Confronto e trattativa con i corrieri, gestione degli account Amazon Seller e Vendor, scelta tra spedire da te o affidarti ad Amazon.</p></div></li>
+      <li><span class="n">06</span><div><h3>Formazione del personale</h3><p>Affiancamento sul posto e istruzioni semplici, così i processi restano in piedi anche quando non ci sono.</p></div></li>
+    </ol>
+  </div>
+  <div class="wrap">
+    <p class="plans-note" style="margin-top:32px"><strong>Consulenza a progetto o a giornate</strong>, con preventivo dopo un primo incontro. Si può abbinare a un gestionale su misura per magazzino e ordini.</p>
   </div>
 </section>
 
@@ -484,6 +600,10 @@ a:hover{color:var(--brick-dark)}
       <details>
         <summary>Il cablaggio è incluso nei pacchetti?</summary>
         <p>La progettazione della rete sì, nel pacchetto Completo. Cavi, apparati e lavori di cablaggio li quoto a parte dopo il sopralluogo, perché cambiano molto da locale a locale.</p>
+      </details>
+      <details>
+        <summary>Posso chiederti solo la consulenza sul magazzino?</summary>
+        <p>Sì. Logistica e magazzino sono un servizio a sé: non devi prendere anche sito o pacchetti. Si parte da un incontro per capire come lavori oggi.</p>
       </details>
       <details>
         <summary>Non sono pratico di tecnologia. È un problema?</summary>
