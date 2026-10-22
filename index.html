@@ -224,6 +224,37 @@ a:hover{color:var(--brick-dark)}
 .kpis{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;list-style:none}
 .kpis li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;font-size:14px;font-weight:500}
 .logi-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* Chi chiama */
+.spot{margin-top:24px;display:grid;gap:36px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px}
+@media (min-width:900px){.spot{grid-template-columns:7fr 5fr;padding:44px 48px;gap:56px}}
+.spot h3{font-size:clamp(24px,3vw,32px);line-height:1.15;margin:0 0 12px;font-weight:700}
+.spot-txt>p{color:var(--ink-2)}
+.spot ul{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.spot li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15px}
+.spot li svg{width:20px;height:20px;color:var(--ok);margin-top:2px}
+.spot-note{margin-top:20px;font-size:14px;color:var(--ink-2);border-left:3px solid var(--ochre);padding-left:12px}
+.call{background:var(--steel);color:#F2EEE6;border-radius:18px;padding:22px 20px 20px;max-width:340px;width:100%;margin:0 auto;box-shadow:var(--shadow);position:relative}
+.call-tag{position:absolute;top:-11px;right:14px;background:var(--ochre);color:var(--ink);font:600 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:var(--r-sm)}
+.call-top{display:flex;align-items:center;gap:12px}
+.call-av{width:46px;height:46px;border-radius:50%;background:var(--brick);display:grid;place-items:center;font:700 17px/1 var(--f-display);color:#fff;flex:none}
+.call-top small{display:block;font-size:11px;opacity:.75;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.call-top b{font:600 20px/1.2 var(--f-display);color:#fff}
+.call dl{margin:16px 0 0;display:grid;gap:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:14px}
+.call dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.call dd{margin:2px 0 0;font-size:15px;color:#fff}
+.call-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.call-btns span{text-align:center;padding:10px;border-radius:999px;font-weight:600;font-size:14px;color:#fff}
+.call-btns .no{background:var(--err)}
+.call-btns .ok{background:var(--ok)}
+
+/* Logistica: altri settori */
+.logi-more{margin-top:56px}
+.logi-more>h3{font-size:22px;margin-bottom:6px}
+.logi-more>p{color:var(--ink-2);margin-bottom:20px}
+.logi-sectors{display:grid;gap:12px}
+@media (min-width:600px){.logi-sectors{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.logi-sectors{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
@@ -352,7 +383,7 @@ a:hover{color:var(--brick-dark)}
       <div class="sector">
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></svg></span>
         <h3>Ristoranti e pizzerie</h3>
-        <p>Prenotazioni online con promemoria, menù sempre aggiornato, gestione delle recensioni.</p>
+        <p>Sai chi chiama e cosa ordina di solito, prenotazioni online con promemoria, menù sempre aggiornato.</p>
       </div>
       <div class="sector">
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
@@ -384,6 +415,39 @@ a:hover{color:var(--brick-dark)}
         <h3>Magazzini e distribuzione</h3>
         <p>Layout, scorte, processi di ricevimento e spedizione, indicatori chiari.</p>
         <a href="#logistica">Vedi la consulenza logistica</a>
+      </div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-txt">
+        <p class="eyebrow">In evidenza · pizzerie, ristoranti, consegne</p>
+        <h3>Quando squilla il telefono, sai già chi è.</h3>
+        <p>Prima ancora di rispondere, sullo schermo compare il cliente: nome, indirizzo, ordine solito e quando ordina di solito. Meno domande al telefono, meno errori negli ordini, consegne più rapide.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Nome, indirizzo e citofono già pronti</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ordine solito da confermare con un tocco</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Giorni e orari abituali, numero di ordini fatti</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tempo di consegna stimato in base alla zona</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Note sul cliente: allergie, resto da portare, campanello</li>
+        </ul>
+        <p class="spot-note">Utile anche a negozi, parrucchieri, NCC: a chiunque abbia clienti abituali che chiamano. Come collegarlo alla tua linea telefonica lo vediamo insieme durante l'audit.</p>
+      </div>
+      <div class="call" role="img" aria-label="Esempio di schermata: chiamata in arrivo da un cliente abituale, con indirizzo, ordine solito, orario abituale e consegna stimata">
+        <span class="call-tag" aria-hidden="true">Esempio</span>
+        <div aria-hidden="true">
+          <div class="call-top">
+            <span class="call-av">MR</span>
+            <div><small>Chiamata in arrivo · cliente abituale</small><b>Marco R.</b></div>
+          </div>
+          <dl>
+            <dt>Indirizzo</dt><dd>Via Roma 12, citofono 4</dd>
+            <dt>Ordine solito</dt><dd>2 margherite, 1 diavola, 1 acqua</dd>
+            <dt>Di solito ordina</dt><dd>Venerdì, verso le 20:30 · 14 ordini</dd>
+            <dt>Consegna stimata</dt><dd>Circa 25 minuti</dd>
+            <dt>Note</dt><dd>Senza lattosio sulla diavola</dd>
+          </dl>
+          <div class="call-btns"><span class="no">Rifiuta</span><span class="ok">Rispondi</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -506,6 +570,32 @@ a:hover{color:var(--brick-dark)}
       <li><span class="n">05</span><div><h3>Corrieri ed e-commerce</h3><p>Confronto e trattativa con i corrieri, gestione degli account Amazon Seller e Vendor, scelta tra spedire da te o affidarti ad Amazon.</p></div></li>
       <li><span class="n">06</span><div><h3>Formazione del personale</h3><p>Affiancamento sul posto e istruzioni semplici, così i processi restano in piedi anche quando non ci sono.</p></div></li>
     </ol>
+  </div>
+  <div class="wrap logi-more">
+    <h3>Non solo magazzini.</h3>
+    <p>Gli stessi processi (scorte, riordini, ubicazioni, uscita della merce) valgono anche per altre attività.</p>
+    <div class="logi-sectors">
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3zm0 0v7"/></svg></span>
+        <h3>Ristoranti e pizzerie</h3>
+        <p>Dispensa e cella in ordine: scorte minime, ordini ai fornitori, scadenze gestite con il primo entrato primo uscito, meno sprechi.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
+        <h3>Negozi e piccole catene</h3>
+        <p>Merce tra retro e scaffale, riordini al momento giusto, inventari veloci e trasferimenti tra punti vendita.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg></span>
+        <h3>E-commerce</h3>
+        <p>Prelievo, imballo, spedizioni e resi organizzati per spedire più in fretta e sbagliare meno.</p>
+      </div>
+      <div class="sector">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <h3>Ingrosso e distribuzione</h3>
+        <p>Ubicazioni, preparazione degli ordini, giri di consegna e documenti di trasporto senza intoppi.</p>
+      </div>
+    </div>
   </div>
   <div class="wrap">
     <p class="plans-note" style="margin-top:32px"><strong>Consulenza a progetto o a giornate</strong>, con preventivo dopo un primo incontro. Si può abbinare a un gestionale su misura per magazzino e ordini.</p>
